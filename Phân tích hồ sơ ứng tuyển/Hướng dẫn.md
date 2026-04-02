@@ -8,29 +8,29 @@ Chào mừng các bạn học viên đến với khóa huấn luyện thực hà
 - Lên kế hoạch đánh dấu từng nấc (VD: Sprint 1 thiết lập folder, Sprint 2 tạo file giả lập, Sprint 3 viết Code).
 - Yêu cầu AI "chạy hoàn thành Sprint 1, tích dấu `[x]` rồi báo cáo trước khi sang Sprint 2". Như vậy Antigravity sẽ được tối ưu sự tĩnh lặng, không bao giờ mất trí nhớ cấu trúc (Context windows).
 
-## 2. Giải mã các kỹ thuật đã dùng trong Case Study
-Thông qua chuỗi yêu cầu giọng nói vừa trải nghiệm, chúng ta đã bắt Antigravity trở thành "Bộ phận IT tích hợp HR", thực hiện 5 cột mốc:
+## 2. Giải mã thuật toán xương sống: Mô hình luồng IPO (Input - Process - Output)
 
-### Cột mốc 1: Khởi tạo Kiến trúc và Không gian số
-- Bạn phát tín hiệu cấu trúc, yêu cầu hệ thống đóng vai *Chuyên viên Nhân sự*.
-- AI khởi tạo tự động các thư mục nhánh (`01_Ho_so_dau_vao`, `02_Thu_tuyen_dung`, `03_Phan_tich_trung_gian`...). Điểm hay nhất là AI tự biết ngầm tạo các file `README.md` nhúng vào mỗi thư mục để giải thích bối cảnh và hướng dẫn "nhân sự con người" phối hợp nhịp nhàng.
+Thay vì làm việc theo cảm tính như các chatbot thông thường, tổ hợp Antigravity tư duy theo chuỗi "Chốt trạm" khép kín. Tại mỗi chốt chạm, hệ thống tuân thủ tuyệt đối cơ chế: **Nhận nguyên liệu (Input) -> Chạy tiến trình xử lý tự động (Process) -> Trả ra thành phẩm (Output)**. Hãy nhìn vào Case Study ứng tuyển phía trên để hiểu logic này:
 
-### Cột mốc 2: Quy chuẩn hoá Tổ chức (Mã định danh)
-- Máy móc cần logic để bóc tách. Thay vì để nhân viên đặt tên CV "Nhung_CV_xin_viec.pdf" rất lung tung, ta đã ép hệ thống thiết lập bộ quy ước Mã định danh kép.
-- Từ đó tất cả hồ sơ phải quy về chuỗi `[Mã ứng viên]_[Mã Chức Danh]_Họ_Tên`. Hành động "đặt luật lệ" này là nền tảng tối thượng của luồng thông tin AI.
+### Bước 1: Khởi tạo và Tiền xử lý dữ liệu (Pre-processing)
+- **[I] - INPUT (Nguyên liệu thô):** Lệnh yêu cầu cấp thiết từ người dùng để dọn dẹp mớ rác lưu trữ (hoặc các CV hỗn độn).
+- **[P] - PROCESS:** AI tự động thiết lập các folder rành mạch (`01_Ho_so_dau_vao`, `02_Thu_tuyen_dung`...), tạo sẵn file `README.md` lưu bối cảnh và **tự đặt luật định danh** ép mọi hồ sơ sau này phải lưu chuẩn theo cấu trúc `[CV_ID]_[JD_ID]`. 
+- **[O] - OUTPUT (Sản phẩm):** Một bộ khung Không gian làm việc cực kỳ ngăn nắp, dữ liệu quy chuẩn để chuẩn bị cho LLM nhúng tay vào.
 
-### Cột mốc 3: Giả lập Database khổng lồ
-- Chờ ứng viên nộp hồ sơ mất 3 tuần để bạn có data Test? Không! Bạn ra yêu cầu "Sinh cho tôi giả lập 10 hồ sơ mô phỏng thực tế bám theo quy tắc định danh".
-- AI trong vòng chớp mắt tự tưởng tượng và điền cực kỳ đầy đủ tiểu sử, kinh nghiệm của 10 nhân sự vào đúng file cấu trúc, cung cấp nguyên liệu khổng lồ cho hệ quản trị AI.
+### Bước 2: Trí tuệ AI Khai thác & Mockup (AI Extraction & Mocking)
+- **[I] - INPUT:** Bản tiêu chuẩn vị trí (JD). Và 1 Prompt "Làm giả lập 10 hồ sơ mô phỏng" (hoặc truyền CV gốc vào).
+- **[P] - PROCESS:** LLM (Trí tuệ nhân tạo lõi) kích hoạt. Nó thay con người tự tưởng tượng, nhận diện các thực thể học thuật (Tên tuổi, Học vấn, Kinh nghiệm), đâm chéo từ khóa để tự bóc tách và "chấm điểm".
+- **[O] - OUTPUT:** Vô số những dữ liệu/bản nháp phân tích chi tiết siêu thực được trút vào kho đệm `03_Phan_tich_trung_gian` dưới định dạng mà máy tính đọc được (Markdown, JSON).
 
-### Cột mốc 4: Transform (Chuyển hoá Pipeline vào Bảng tính)
-- Bước rườm rà nhất ở các phòng HR là tổng hợp các văn bản dài thò lò vào lưới Excel.
-- Bằng tính năng Extract tự nhiên, AI đọc ngược 10 bản tiểu sử kia, và viết thẳng ra dạng bảng biểu (`CSV / Excel`). Phân luồng các file CSV theo từng phòng ban và tạo hẳn một file Báo cáo Master rà soát toàn bộ. Không còn phải Copy-Paste thủ công.
+### Bước 3: Chuyển hoá và Định tuyến (Data Transform)
+- **[I] - INPUT:** Khối chữ nghĩa lộn xộn/dữ liệu thô vừa bóc tách ở Bước 2.
+- **[P] - PROCESS:** Hành động "Transform" bẻ gãy ngôn ngữ tự nhiên để gói vào Bảng biểu. Thêm thuật toán định tuyến tự động phân làn: Hồ sơ có mã JD là `[MKT]` thì quét lùa hết đưa về bảng MKT. Máy móc tự thực thi không cần con người ngó ngàng.
+- **[O] - OUTPUT:** 5 Bảng báo cáo lưu tách lẻ theo từng phòng ban (`.csv`). Đồng thời sinh ra 1 siêu Bảng tính quy tụ dữ liệu toàn doanh nghiệp `Tong_hop_tat_ca_vi_tri.csv` lưu về `04_Du_lieu_tong_hop`.
 
-### Cột mốc 5: Nâng tầm giải pháp (Tạo hẳn App GUI)
-- Dữ liệu ở bảng tính đã tốt, nhưng bạn đã nâng trần ranh giới bằng câu lệnh: *"Lập trình cho tôi một phần mềm giao diện để quản lý đống CSV đấy".*
-- Thay vì dừng lại ở việc là một Chatbot nhả Text, dòng Antigravity sử dụng tài nguyên của Python tự động viết một File công cụ (`hr_csv_manager.py`). 
-- Phần mềm này hiện trên Desktop, tích hợp luôn nút đối chiếu dữ liệu tự động đếm các lệch pha ngầm, biến bạn thành một Nhà Phát triển Phần mềm dẫu cho bạn không rành công nghệ.
+### Bước 4: Đóng gói Phần mềm & Nghiệm thu Dữ liệu (Validation GUI)
+- **[I] - INPUT:** Trọn bộ thư mục các file CSV tẻ nhạt. Và sự khao khát ra quyết định nhanh gọn từ Lãnh đạo.
+- **[P] - PROCESS:** Agent trực tiếp đóng vai "Kỹ sư PM" viết file Python (`hr_csv_manager.py`). Tích hợp thư viện Tkinter dựng khung giao diện. Cài cắm hàm **Audit (Kiểm duyệt)** để tự lôi số dòng của bảng các phòng ban cộng lại đem trừ đi số dòng siêu bảng tính Master nhằm truy tìm sai lệch rò rỉ hồ sơ.
+- **[O] - OUTPUT:** Chuyên viên HR chỉ việc đưa chuột bấm mở một cái App Desktop trên Window cực lấp lánh (GUI), đảm bảo "Toàn vẹn Dữ liệu 100%". Rút ngắn thứ mà trước đây tốn 2 tháng outsource xuống còn 15 phút.
 
 ## 3. Tổng kết thông điệp
 Bạn chính là **"Kiến trúc sư của những tác nhân"** (AI Orchestrator). 
