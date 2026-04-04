@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Pipeline Kanban</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: white; margin: 0; padding: 20px;}
+        .board { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px;}
+        .col { background: #1e293b; border-radius: 8px; width: 300px; min-width: 300px; padding: 15px; }
+        .col-title { font-weight: bold; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #334155;}
+        .card { background: #334155; padding: 15px; border-radius: 6px; margin-bottom: 10px; cursor: grab; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .job { color: #38bdf8; font-size: 12px; font-weight: bold; }
+        .name { font-size: 16px; margin: 5px 0; }
+        .src { color: #94a3b8; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h2>🚀 Smart TA Recruitment Pipeline</h2>
+    <div class="board"><div class="col" ondragover="event.preventDefault()" ondrop="drop(event, this)"><div class="col-title">Sourcing</div><div class="card" draggable="true" id="c0" ondragstart="drag(event)"><div class="job">Backend Dev</div><div class="name">Nguyễn Văn Tuấn</div><div class="src">TopCV - Exp: 3 Years</div></div><div class="card" draggable="true" id="c1" ondragstart="drag(event)"><div class="job">Frontend Dev</div><div class="name">Trần Thị Ánh</div><div class="src">LinkedIn - Exp: 2 Years</div></div><div class="card" draggable="true" id="c2" ondragstart="drag(event)"><div class="job">Tester QA</div><div class="name">Lý Hải Minh</div><div class="src">Referral - Exp: 4 Years</div></div><div class="card" draggable="true" id="c3" ondragstart="drag(event)"><div class="job">Backend Dev</div><div class="name">Hoàng Duy Anh</div><div class="src">Website - Exp: Fresher</div></div><div class="card" draggable="true" id="c4" ondragstart="drag(event)"><div class="job">HR Admin</div><div class="name">Phạm Hải Yến</div><div class="src">TopCV - Exp: 5 Years</div></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event, this)"><div class="col-title">CV Screening</div><div class="card" draggable="true" id="c5" ondragstart="drag(event)"><div class="job">CS Manager</div><div class="name">Đoàn Tấn Trường</div><div class="src">LinkedIn - Exp: 6 Years</div></div><div class="card" draggable="true" id="c6" ondragstart="drag(event)"><div class="job">Accountant</div><div class="name">Mai Thu Hằng</div><div class="src">VietNamWorks - Exp: 3 Years</div></div><div class="card" draggable="true" id="c7" ondragstart="drag(event)"><div class="job">Python Dev</div><div class="name">Vũ Duy Khiêm</div><div class="src">Referral - Exp: 2 Years</div></div><div class="card" draggable="true" id="c8" ondragstart="drag(event)"><div class="job">UI/UX Design</div><div class="name">Tạ Thị Ngọc</div><div class="src">Behance - Exp: 4 Years</div></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event, this)"><div class="col-title">Interview</div><div class="card" draggable="true" id="c9" ondragstart="drag(event)"><div class="job">Backend Dev</div><div class="name">Lê Cát Trọng</div><div class="src">LinkedIn - Exp: 5 Years</div></div><div class="card" draggable="true" id="c10" ondragstart="drag(event)"><div class="job">Manual Tester</div><div class="name">Bùi Thị Phương</div><div class="src">TopCV - Exp: 1 Year</div></div><div class="card" draggable="true" id="c11" ondragstart="drag(event)"><div class="job">DevOps</div><div class="name">Đinh Hoài Nam</div><div class="src">Referral - Exp: 4 Years</div></div><div class="card" draggable="true" id="c12" ondragstart="drag(event)"><div class="job">Content MKT</div><div class="name">Hồ Hoàng Long</div><div class="src">Website - Exp: 2 Years</div></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event, this)"><div class="col-title">Offer</div><div class="card" draggable="true" id="c13" ondragstart="drag(event)"><div class="job">CS Executive</div><div class="name">Trịnh Thùy Linh</div><div class="src">TopCV - Exp: 3 Years</div></div><div class="card" draggable="true" id="c14" ondragstart="drag(event)"><div class="job">Frontend Dev</div><div class="name">Võ Văn Phúc</div><div class="src">LinkedIn - Exp: 5 Years</div></div><div class="card" draggable="true" id="c15" ondragstart="drag(event)"><div class="job">HR Manager</div><div class="name">Châu Ngọc Thủy</div><div class="src">Referral - Exp: 8 Years</div></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event, this)"><div class="col-title">Hired</div><div class="card" draggable="true" id="c16" ondragstart="drag(event)"><div class="job">Data Analyst</div><div class="name">Kiều Minh Tâm</div><div class="src">Website - Exp: 4 Years</div></div><div class="card" draggable="true" id="c17" ondragstart="drag(event)"><div class="job">Tester Automation</div><div class="name">Tô Mỹ Dung</div><div class="src">LinkedIn - Exp: 3 Years</div></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event, this)"><div class="col-title">Rejected</div><div class="card" draggable="true" id="c18" ondragstart="drag(event)"><div class="job">Backend Dev</div><div class="name">Ngô Đức Quyền</div><div class="src">TopCV - Exp: Fresher</div></div><div class="card" draggable="true" id="c19" ondragstart="drag(event)"><div class="job">Marketing Lead</div><div class="name">Tôn Thất Sơn</div><div class="src">Referral - Exp: 7 Years</div></div></div>
+    </div>
+    <script>
+        function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function drop(ev, el) { 
+            ev.preventDefault(); 
+            var data = ev.dataTransfer.getData("text"); 
+            var card = document.getElementById(data);
+            if(el.classList.contains('col')) el.appendChild(card);
+            else if(el.parentElement.classList.contains('col')) el.parentElement.appendChild(card);
+        }
+    </script>
+</body></html>

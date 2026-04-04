@@ -1,0 +1,9 @@
+Tran Thi B
+Frontend Angular Developer
+Kinh nghiệm: 2 năm
+Năm sinh: 1998
+SĐT: 0987654321
+Email: b.tran@abc.com
+Trường: FPT University
+Ngoại ngữ: TOEIC 800
+Mức lương mong muốn: 12-15M
